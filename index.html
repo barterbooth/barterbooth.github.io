@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        	<title>Barter Booth</title>
+       	 	<meta charset="utf-8" />
+        	<link rel="stylesheet" href="index.css" />
+        	<title>Barther Booth</title>
+	</head>
+
+    <body>
+		
+	<nav class="navbar background">
+		<form class="form-inline" action="/action_page.php">
+			<input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
+			
+                        <button class="btn btn-sm">Rechercher</button>
+		</form>
+            <!-- we have used list tag that is ul 
+                 to list the items-->
+           
+		<ul class="nav-list">
+                
+			<li><a href="index.html">Acceuil</a></li>
+               
+			<li><a href="Explication.html">Explication</a></li>
+		
+			<li><a href="Catalogue.html">Catalogue</a></li>
+		
+			<li><a href="Paramètre.html">Paramètre</a></li>
+		
+			<li><a href="Compte.html">Compte</a></li>
+           
+		</ul>
+            <!-- we have used rightnav in order to design
+                 the seachbar properly by using CSS-->
+           
+		<div class="rightNav">
+          <!-- the value that search bar will take is text -->
+                
+            
+		</div>
+       
+	    </nav>
+	  
+	    
+	    <div id="bloc" style="margin-left:390px">
+		    <CENTER>
+		    	<h1>Mise en situation</h1>
+ 				<p align=right class="text">Bonjour à tous et à toutes .Voici le chef d'oeuvre qui nous réunira tous .Depuis des années 
+					,la technologie évolua , nous offrant des possibilités qui étaient
+        autrefois impensable .Mais dans notre avancement , nous avons délaissé une part importante de nos vie à savoir nos relation entre individu .</p>
+				<p>L'objectif est donc de résoudre ce problème et de ressouder les liens qui nous unissent .</p>
+			         
+		    </CENTER>
+	    </div>
+	    <p class="image1">
+		    <img src="Numérique.jpeg" align=left height=20% width=15% alt="ilustration" class="image">
+	    </p>
+	    
+	    
+	    <div id="bloc" style="margin-left:390px">
+		    <CENTER>
+			<h1>Explications</h1>
+		    		<p align=left class="text">Afin de redynamiser la vie sociale et de multiplier les interractions sociales nous
+					vous présentons le "Barter Booth". Une cabine de mise
+				à disposition d'artcles. Cette cabine va permettre l'implémentation d'un ancien processus d'échange nommé le troc.
+					Par le biais de ce système nous 
+				réglerons le problème sociétale due à l'impacte de l'évolution de la technologie.</p>
+		    		<p class="text">Cette cabine et relier à un site web permettant d'avoir accès aux informations à distance. 
+					Deplus ,afin d'être manipulable sur place ,une Interface Homme Machine 
+		  		octroyant la possibilitée de trier les arcticles ainsi que les déplacer .Et enfin, un système de sécurité 
+					visant à protéger les produits et empécher d'éventuelles dérapages.</p>
+		   </CENTER>
+ 	    </div>
+	    <p class="image2">
+		    <img src="sociale.jpg" align=right alt="Ilustration" class="image">
+	    </p>
+	    <a href="Notification" class="notification">
+  		<span>Notification</span>
+  		<span class="badge">3</span>
+	    </a>
+    </body>
+    
+    <style>
+        
+	body 
+        
+	{
+        background-repeat: no-repeat;
+        background-attachement: fixed;
+        background-image: url("chaud.svg");
+	background-color: black;
+        background-size: cover;
+	margin: 0;
+	}
+
+	ul 
+	{
+        list-style-type: none;
+ 	margin: 0;
+  	padding: 0;
+  	width: 25%;
+ 	background-image: url("chaud.jpg");
+  	position: fixed;
+  	height: 100%;
+  	overflow: auto;
+	height: 100%;
+	}
+
+	li a 
+	{
+ 	display: block;
+ 	color: #58D68D;
+	width: 60px;
+ 	padding: 8px 16px;
+ 	text-decoration: none;
+	font-size: 50px;
+	text-align: center;
+	}
+	
+	li:last-child 
+	{
+   	border-bottom: none;
+	}
+
+	li a.active 
+	
+	{
+  	background-color: #04AA6D;
+  	color: white;
+	}
+
+	li a:hover:not(.active) 
+	{
+ 	background-color: #555;
+  	color: white;
+	}
+	
+	#bloc
+
+	{
+	margin-left:300px;
+	width: 50%;
+	border-radius: 10px;
+	background-color: #4C6D5A;
+	opacity: 0.5;
+	text-align: justify;
+	overflow:hidden;
+	}
+	
+	p
+	{
+	font-size: 25px;
+	}
+	h1
+	{
+	font-size: 30px;
+	}
+	image
+	{
+	height: 20%;
+  	width: 40%;
+	}
+	.notification {
+  	background-color: #555;
+  	color: white;
+  	text-decoration: none;
+  	padding: 15px 26px;
+  	position: relative;
+	display: inline-block;
+ 	border-radius: 2px;
+	}
+
+	.notification:hover {
+ 	 background: red;
+	}
+
+	.notification .badge {
+ 	 position: absolute;
+  	top: -10px;
+  	right: -10px;
+  	padding: 5px 10px;
+  	border-radius: 50%;
+ 	 background: red;
+  	color: white;
+	}
+	image1
+	{
+	float:left;
+	}
+	image2
+	{
+	float:right;
+	}
+
+       
+    </style>
+             
+</html>
+

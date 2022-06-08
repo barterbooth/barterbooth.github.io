@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        	<title>Barter Booth</title>
+       	 	<meta charset="utf-8" />
+        	<link rel="stylesheet" href="Compte.html" />
+        	<title>Barther Booth</title>
+	</head>
+
+    <body>
+            <p>
+                    <ul class="nav-list">
+                
+			                <li><a href="index.html">Acceuil</a></li>
+               
+		                  	<li><a href="Explication.html">Explication</a></li>
+		
+                  			<li><a href="Catalogue.html">Catalogue</a></li>
+		
+                  			<li><a href="Paramètre.html">Paramètre</a></li>
+			    		
+			    		<li><a href="Inscription.html">Paramètre</a></li>
+
+           
+		     </ul>
+          </p>
+         
+	  <article class="identité">
+	  	<p>Pour vous enregistrer veuillez fournir les indormations ci-dessous .</p>
+	  	<form method="post" action="traitement.php">
+			<h1>Identité</h1>
+			<form method="post" action="traitement.php">
+ 
+   	<fieldset>
+       		<legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
+
+       		<label for="nom">Quel est votre nom ?</label>
+       		<input type="text" name="nom" id="nom" />
+		<br/>
+       		<label for="prenom">Quel est votre prénom ?</label>
+       		<input type="text" name="prenom" id="prenom" />
+ 		<br/>
+       		<label for="email">Quel est votre e-mail ?</label>
+       		<input type="email" name="email" id="email" />
+		<br/>
+		<input type="submit" value="Envoyer" />
+
+  	 </fieldset>
+	
+			
+		</form> 
+  
+	  </artical>	
+    <body>
+  
+  
+  <style>
+        
+	body 
+        
+	{
+        background-repeat: no-repeat;
+        background-attachement: fixed;
+        background-image: url("chaud.svg");
+	background-color: black;
+        background-size: cover;
+	margin: 0;
+	}
+
+	ul 
+	{
+        list-style-type: none;
+ 	margin: 0;
+  	padding: 0;
+  	width: 25%;
+ 	background-image: url("chaud.jpg");
+  	position: fixed;
+  	height: 100%;
+  	overflow: auto;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+
+	li a 
+	{
+ 	display: block;
+ 	color: #58D68D;
+	width: 60px;
+ 	padding: 8px 16px;
+ 	text-decoration: none;
+	font-size: 50px;
+	text-align: center;
+	}
+	
+	li:last-child 
+	{
+   	border-bottom: none;
+	}
+
+	li a.active 
+	
+	{
+  	background-color: #04AA6D;
+  	color: white;
+	}
+
+	li a:hover:not(.active) 
+	{
+ 	background-color: #555;
+  	color: white;
+	}
+	
+	#bloc
+
+	{
+	margin-left:300px;
+	width: 50%;
+	border-radius: 10px;
+	background-color: #4C6D5A;
+	opacity: 0.5;
+	text-align: justify;
+	overflow:hidden;
+	}
+	
+	p
+	{
+	font-size: 25px;
+	}
+	h1
+	{
+	font-size: 30px;
+	}
+	image
+	{
+	height: 20%;
+  	width: 40%;
+	}
+	.notification {
+  	background-color: #555;
+  	color: white;
+  	text-decoration: none;
+  	padding: 15px 26px;
+  	position: relative;
+	display: inline-block;
+ 	border-radius: 2px;
+	}
+
+	.notification:hover {
+ 	 background: red;
+	}
+
+	.notification .badge {
+ 	 position: absolute;
+  	top: -10px;
+  	right: -10px;
+  	padding: 5px 10px;
+  	border-radius: 50%;
+ 	 background: red;
+  	color: white;
+	}
+	article
+	{
+	display:block; 
+	overflow:hidden;
+	color:white;
+	font-size:20px;
+	margin-left:120px;
+	text-align: center;
+	}
+
+       
+    </style>
+             
+</html>
+<?php
+
+// Validation du formulaire
+if (isset($_POST['email']) &&  isset($_POST['password'])) {
+    foreach ($users as $user) {
+        if (
+            $user['email'] === $_POST['email'] &&
+            $user['password'] === $_POST['password']
+        ) {
+            $loggedUser = [
+                'email' => $user['email'],
+            ];
+        } else {
+            	$errorMessage = sprintf('Les informations envoyées ne permettent pas de vous identifier : (%s/%s)',
+                $_POST['email'],
+                $_POST['password']
+            );
+        }
+    }
+}
+?>
+
+<!--
+   Si utilisateur/trice est non identifié(e), on affiche le formulaire
+-->
+<?php if(!isset($loggedUser)): ?>
+<form action="home.php" method="post">
+    <!-- si message d'erreur on l'affiche -->
+    <?php if(isset($errorMessage)) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $errorMessage; ?>
+        </div>
+    <?php endif; ?>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" aria-describedby="email-help" placeholder="you@exemple.com">
+        <div id="email-help" class="form-text">L'email utilisé lors de la création de compte.</div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+<!-- 
+    Si utilisateur/trice bien connectée on affiche un message de succès
+-->
+<?php else: ?>
+    <div class="alert alert-success" role="alert">
+        Bonjour <?php echo $loggedUser['email']; ?> et bienvenue sur le site !
+    </div>
+<?php endif; ?>
+
